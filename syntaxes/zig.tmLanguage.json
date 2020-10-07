@@ -26,6 +26,18 @@
     },
     {
       "include": "#variables"
+    },
+    {
+      "include": "#punctuation-comma"
+    },
+    {
+      "include": "#punctuation-semicolon"
+    },
+    {
+      "include": "#punctuation-accessor"
+    },
+    {
+      "include": "#punctuation-rest"
     }
   ],
   "repository": {
@@ -294,7 +306,17 @@
         {
           "name": "string.quoted.double.zig",
           "begin": "\"",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.begin.zig"
+            }
+          },
           "end": "\"",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.end.zig"
+            }
+          },
           "patterns": [
             {
               "include": "#stringcontent"
@@ -356,6 +378,33 @@
           "match": "@[_a-zA-Z][_a-zA-Z0-9]*"
         }
       ]
-    }
+    },
+    "punctuation-comma": {
+			"name": "punctuation.separator.comma.zig",
+			"match": ","
+		},
+		"punctuation-semicolon": {
+			"name": "punctuation.terminator.statement.zig",
+			"match": ";"
+		},
+		"punctuation-accessor": {
+			"match": "(?:(\\.)|(\\?\\.(?!\\s*[[:digit:]])))",
+			"captures": {
+				"1": {
+					"name": "punctuation.accessor.zig"
+				},
+				"2": {
+					"name": "punctuation.accessor.optional.zig"
+				}
+			}
+    },
+    "punctuation-rest": {
+      "patterns": [
+        {
+          "name": "punctuation.zig",
+          "match": "(\\(|\\)|\\[|\\]|\\{|\\}|\\=)"
+        }  
+      ]
+		}
   }
 }
