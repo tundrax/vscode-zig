@@ -16,7 +16,13 @@
       "include": "#keywords"
     },
     {
+      "include": "#punctuation-rest"
+    },
+    {
       "include": "#operators"
+    },
+    {
+      "include": "#assignment"
     },
     {
       "include": "#numbers"
@@ -38,9 +44,6 @@
     },
     {
       "include": "#punctuation-accessor"
-    },
-    {
-      "include": "#punctuation-rest"
     }
   ],
   "repository": {
@@ -251,6 +254,14 @@
         }
       ]
     },
+    "punctuation-rest": {
+      "patterns": [
+        {
+          "name": "punctuation.zig",
+          "match": "\\(|\\)|\\[|\\]|\\{|\\}|=>|\\:"
+        }  
+      ]
+    },
     "operators": {
       "patterns": [
         {
@@ -259,7 +270,7 @@
         },
         {
           "name": "keyword.operator.comparison.zig",
-          "match": "(\\b(and|or)\\b)|(==|!=)"
+          "match": "(\\b(and|or)\\b)|(<(?!<|=)|>(?!<|=|>)|<=|>=|==|!=|(?<=[ \\t])\\?)"
         },
         {
           "name": "keyword.operator.arithmetic.zig",
@@ -272,6 +283,14 @@
         {
           "name": "keyword.operator.special.zig",
           "match": "(==|\\+\\+|\\*\\*|->)"
+        }
+      ]
+    },
+    "assignment": {
+      "patterns": [
+        {
+          "match": "=",
+          "name": "keyword.operator.assignment.zig"
         }
       ]
     },
@@ -403,14 +422,6 @@
 					"name": "punctuation.accessor.optional.zig"
 				}
 			}
-    },
-    "punctuation-rest": {
-      "patterns": [
-        {
-          "name": "punctuation.zig",
-          "match": "(\\(|\\)|\\[|\\]|\\{|\\}|[^\\>]\\=\\>?|\\:)"
-        }  
-      ]
     }
   }
 }
