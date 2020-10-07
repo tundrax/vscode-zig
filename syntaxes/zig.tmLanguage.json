@@ -28,6 +28,9 @@
       "include": "#variables"
     },
     {
+      "include": "#parameter-name"
+    },
+    {
       "include": "#punctuation-comma"
     },
     {
@@ -405,7 +408,7 @@
       "patterns": [
         {
           "name": "punctuation.zig",
-          "match": "(\\(|\\)|\\[|\\]|\\{|\\}|\\=|\\:)"
+          "match": "(\\(|\\)|\\[|\\]|\\{|\\}|[^\\>]\\=\\>?|\\:)"
         }  
       ]
     }
