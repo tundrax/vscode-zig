@@ -178,9 +178,12 @@
           "match": "\\b(true|false)\\b"
         },
         {
-          "match": "[\\s\\(\\[\\{](\\.[_a-zA-Z][_a-zA-Z0-9]*)(?!\\s*=[^>])(?![_a-zA-Z0-9])",
+          "match": "[\\s\\(\\[\\{](\\.)([_a-zA-Z][_a-zA-Z0-9]*)(?!\\s*=[^>])(?![_a-zA-Z0-9])",
           "captures": {
             "1": {
+              "name": "punctuation.accessor.enummember.zig"
+            },
+            "2": {
               "name": "variable.other.enummember.zig"
             }
           }
@@ -405,6 +408,6 @@
           "match": "(\\(|\\)|\\[|\\]|\\{|\\}|\\=|\\:)"
         }  
       ]
-		}
+    }
   }
 }
